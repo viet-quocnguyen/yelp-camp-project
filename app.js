@@ -10,6 +10,8 @@ var express = require("express"),
   User = require("./models/user"), // using user model
   flash = require("connect-flash");
 
+var database = require("./config/database");
+
 // Requiring Routes
 var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
@@ -25,10 +27,10 @@ app.use(
 );
 
 // mongoose.connect("mongodb://localhost/yelp_camp"); // connect to the db
-mongoose.connect(
-  "mongodb://qvnguyen:gunnervn3@ds119273.mlab.com:19273/yelpcamp_qvnguyen",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.DATABASE_URL || database.mongoURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 app.use(bodyParser.urlencoded({ extended: true })); // add body parser to app
 app.use(express.static(__dirname + "/public")); // add public dir to use
 app.set("view engine", "ejs"); // read all .ejs file
