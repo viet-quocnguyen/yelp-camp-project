@@ -1,12 +1,31 @@
-.thumbnail img{
-    width: 100%;
+.thumbnail img {
+  width: 100%;
 }
-.thumbnail{
-    padding: 0;
+
+.box {
+  transition: all 0.2s ease-in-out;
 }
-.thumbnail .caption-full{
-    padding: 9px;
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
-.text-left a, .text-left form{
-    display: inline;
+
+.thumbnail {
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+}
+.text-left a,
+.text-left form {
+  display: inline;
+}
+
+/* Google map */
+#map {
+  height: 400px;
+  width: 100%;
 }

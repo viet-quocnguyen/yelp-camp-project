@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express"),
   app = express(), // using express
   bodyParser = require("body-parser"), // using bodyParser
@@ -11,7 +12,6 @@ var express = require("express"),
   flash = require("connect-flash");
 
 var database = require("./config/database");
-
 // Requiring Routes
 var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
